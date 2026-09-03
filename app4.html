@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Analyzer Suite — Code, Math & Writing Tools</title>
+<title>Code Crusader — Logic, Decoded.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234f46e5'/%3E%3Ccircle cx='27' cy='27' r='13' fill='none' stroke='%23ffffff' stroke-width='5.5'/%3E%3Cline x1='36.5' y1='36.5' x2='49' y2='49' stroke='%23ffffff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M20.5 27.5l4.5 4.5 8.5-9.5' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="assets/code-crusader-mascot.png">
 <style>
   :root{
     --bg: #f7f8fa;
@@ -42,7 +42,7 @@
     --font-display: 'Sora', 'Inter', -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
   }
-
+ 
   html[data-theme="dark"]{
     --bg: #0f1115;
     --surface: #1a1d23;
@@ -57,10 +57,10 @@
     --teal-bg: #0f2a30;
     --purple-bg: #241a38;
   }
-
+ 
   *{ box-sizing: border-box; }
   html,body{ margin:0; padding:0; height:100%; }
-
+ 
   body{
     background: var(--bg);
     color: var(--text);
@@ -68,9 +68,9 @@
     -webkit-font-smoothing: antialiased;
     transition: background 0.2s ease, color 0.2s ease;
   }
-
+ 
   a{ color: var(--primary); }
-
+ 
   h1, h2, h3, h4,
   .sidebar-brand span:not(.mark),
   .nav-item span:not(.icon):not(.badge-count),
@@ -80,13 +80,13 @@
     font-family: var(--font-display);
     letter-spacing: -0.01em;
   }
-
+ 
   ::-webkit-scrollbar{ width: 10px; height: 10px; }
   ::-webkit-scrollbar-track{ background: transparent; }
   ::-webkit-scrollbar-thumb{ background: #d0d5dd; border-radius: 6px; }
   ::-webkit-scrollbar-thumb:hover{ background: #98a2b3; }
   html[data-theme="dark"] ::-webkit-scrollbar-thumb{ background: #3a3f4a; }
-
+ 
   /* ============ COLOR SCHEMES (accent palettes) ============ */
   html[data-accent="indigo"]{
     --primary: #4f46e5; --primary-dark: #4338ca; --primary-bg: #eef2ff; --primary-light: #7c72f5;
@@ -108,13 +108,13 @@
   html[data-theme="dark"][data-accent="forest"]{ --primary-bg: #0e2a1a; }
   html[data-theme="dark"][data-accent="sunset"]{ --primary-bg: #3a220f; }
   html[data-theme="dark"][data-accent="berry"]{ --primary-bg: #3a1230; }
-
+ 
   /* ============ APP SHELL ============ */
   .app-shell{
     display: flex;
     min-height: 100vh;
   }
-
+ 
   /* ============ SIDEBAR / CONTENT BAR ============ */
   .sidebar{
     width: var(--sidebar-w);
@@ -128,7 +128,7 @@
     height: 100vh;
     z-index: 30;
   }
-
+ 
   .sidebar-brand{
     display: flex;
     align-items: center;
@@ -140,7 +140,7 @@
     cursor: pointer;
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-
+ 
   .sidebar-brand .mark{
     width: 32px; height: 32px;
     border-radius: 9px;
@@ -149,7 +149,7 @@
     flex-shrink: 0;
   }
   .sidebar-brand .mark svg{ width: 18px; height: 18px; }
-
+ 
   .brand-icon{
     width: 1em; height: 1em;
     display: inline-block;
@@ -157,7 +157,7 @@
     margin-right: 0.4rem;
     flex-shrink: 0;
   }
-
+ 
   .sidebar-nav{
     padding: 1rem 0.7rem;
     display: flex;
@@ -165,7 +165,7 @@
     gap: 0.2rem;
     flex: 1;
   }
-
+ 
   .sidebar-section-label{
     font-size: 0.68rem;
     font-weight: 700;
@@ -174,7 +174,7 @@
     color: var(--sidebar-text-dim);
     padding: 0.9rem 0.6rem 0.4rem;
   }
-
+ 
   .nav-item{
     display: flex;
     align-items: center;
@@ -193,7 +193,7 @@
     transition: background 0.15s ease, color 0.15s ease;
     position: relative;
   }
-
+ 
   .nav-item .icon{ font-size: 1rem; width: 20px; text-align: center; flex-shrink:0; }
   .nav-item .badge-count{
     margin-left: auto;
@@ -204,15 +204,15 @@
     padding: 0.1rem 0.45rem;
     border-radius: 10px;
   }
-
+ 
   .nav-item:hover{ background: var(--sidebar-hover); color: #fff; }
-
+ 
   .nav-item.active{
     background: var(--primary);
     color: #fff;
   }
   .nav-item.active .badge-count{ background: rgba(255,255,255,0.2); }
-
+ 
   .sidebar-footer{
     padding: 0.9rem 1rem 1.1rem;
     border-top: 1px solid rgba(255,255,255,0.06);
@@ -220,7 +220,7 @@
     flex-direction: column;
     gap: 0.7rem;
   }
-
+ 
   .theme-toggle-row{
     display: flex;
     align-items: center;
@@ -228,7 +228,7 @@
     font-size: 0.8rem;
     color: var(--sidebar-text);
   }
-
+ 
   .switch{
     width: 38px; height: 21px;
     background: #33363e;
@@ -250,7 +250,7 @@
   }
   .switch.on{ background: var(--primary); }
   .switch.on::after{ transform: translateX(17px); }
-
+ 
   .text-size-controls{ display: flex; gap: 0.3rem; }
   .text-size-btn{
     width: 26px; height: 26px;
@@ -264,13 +264,13 @@
     transition: all 0.15s ease;
   }
   .text-size-btn:hover{ background: var(--primary); color: #fff; }
-
+ 
   .sidebar-note{
     font-size: 0.72rem;
     color: var(--sidebar-text-dim);
     line-height: 1.5;
   }
-
+ 
   /* ============ COMPACT MODE ============ */
   body.compact .panel-body{ padding: 0.85rem; }
   body.compact .panel-head{ padding: 0.65rem 0.9rem; }
@@ -282,7 +282,7 @@
   body.compact .feature-card{ padding: 1.1rem; }
   body.compact .steps-panel, body.compact .theme-panel .panel-body{ padding: 1.1rem 1.3rem; }
   body.compact .issue{ padding: 0.65rem 0.8rem; }
-
+ 
   /* ============ MAIN AREA ============ */
   .main-area{
     flex: 1;
@@ -290,7 +290,7 @@
     display: flex;
     flex-direction: column;
   }
-
+ 
   .topbar{
     background: var(--surface);
     border-bottom: 1px solid var(--border);
@@ -303,7 +303,7 @@
     z-index: 20;
     gap: 1rem;
   }
-
+ 
   .breadcrumb{
     font-size: 0.85rem;
     color: var(--text-muted);
@@ -313,7 +313,7 @@
   }
   .breadcrumb .brand-icon{ color: var(--primary); margin-right: 0.15rem; }
   .breadcrumb b{ color: var(--text); font-weight: 600; }
-
+ 
   .topbar-right{
     display: flex;
     align-items: center;
@@ -321,7 +321,7 @@
     font-size: 0.82rem;
     color: var(--text-muted);
   }
-
+ 
   .kbd{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.72rem;
@@ -330,7 +330,7 @@
     border-radius: 4px;
     padding: 0.1rem 0.4rem;
   }
-
+ 
   .content{
     max-width: 1280px;
     width: 100%;
@@ -338,12 +338,12 @@
     padding: 2rem 1.75rem 4rem;
     flex: 1;
   }
-
+ 
   .view{ display: none; animation: fadeIn 0.25s ease; }
   .view.active{ display: block; }
-
+ 
   @keyframes fadeIn{ from{ opacity:0; transform: translateY(6px);} to{ opacity:1; transform: translateY(0);} }
-
+ 
   @media (max-width: 900px){
     .sidebar{ width: 72px; }
     .sidebar-brand span:not(.mark){ display:none; }
@@ -354,7 +354,7 @@
     .sidebar-note{ display:none; }
     .grid{ grid-template-columns: 1fr !important; }
   }
-
+ 
   /* ============ HOME PAGE ============ */
   .hero{
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
@@ -429,7 +429,7 @@
     color: #fff;
     border: 1px solid rgba(255,255,255,0.35);
   }
-
+ 
   .section-label{
     font-size: 0.78rem;
     font-weight: 700;
@@ -438,7 +438,7 @@
     color: var(--text-muted);
     margin-bottom: 1rem;
   }
-
+ 
   .feature-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -446,7 +446,7 @@
     margin-bottom: 2.5rem;
   }
   @media (max-width: 900px){ .feature-grid{ grid-template-columns: 1fr; } }
-
+ 
   .feature-card{
     background: var(--surface);
     border: 1px solid var(--border);
@@ -485,7 +485,7 @@
   .feature-icon.bugs{ background: var(--red-bg); }
   .feature-icon.math{ background: var(--teal-bg); }
   .feature-icon.grammar{ background: var(--purple-bg); }
-
+ 
   .feature-card h3{ font-size: 1.05rem; margin: 0; }
   .feature-card p{ font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.55; }
   .feature-card .go{
@@ -497,7 +497,7 @@
     transition: gap 0.15s ease;
   }
   .feature-card:hover .go{ gap: 0.55rem; }
-
+ 
   .steps-panel{
     background: var(--surface);
     border: 1px solid var(--border);
@@ -525,14 +525,14 @@
   }
   .step-block h4{ margin: 0 0 0.25rem; font-size: 0.92rem; }
   .step-block p{ margin: 0; font-size: 0.83rem; color: var(--text-muted); line-height: 1.5; }
-
+ 
   .stats-row{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 1rem;
     margin-bottom: 2rem;
   }
-
+ 
   /* ============ COLOR SCHEME PICKER ============ */
   .theme-panel{ margin-bottom: 2rem; }
   .theme-picker{ display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -573,7 +573,7 @@
   .stat-card .stat-icon{ font-size: 1.4rem; }
   .stat-card .stat-num{ font-size: 1.35rem; font-weight: 800; line-height: 1.1; }
   .stat-card .stat-lbl{ font-size: 0.78rem; color: var(--text-muted); }
-
+ 
   /* ============ PAGE HEAD (tool pages) ============ */
   .page-head{ margin-bottom: 1.75rem; display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
   .page-head h1{ font-size: 1.5rem; font-weight: 800; margin: 0 0 0.35rem; letter-spacing: -0.02em; }
@@ -583,9 +583,9 @@
     display: flex; align-items: center; gap: 0.35rem; padding: 0.4rem 0; font-weight: 500;
   }
   .back-link:hover{ color: var(--primary); }
-
+ 
   .grid{ display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 1.5rem; align-items: start; }
-
+ 
   .panel{
     background: var(--surface);
     border: 1px solid var(--border);
@@ -602,7 +602,7 @@
   .panel-head h2{ font-size: 0.95rem; font-weight: 600; margin: 0; display: flex; align-items: center; }
   .panel-head h2 .brand-icon{ color: var(--primary); }
   .panel-body{ padding: 1.25rem; }
-
+ 
   .lang-pills{ display: flex; gap: 0.4rem; background: var(--bg); padding: 0.25rem; border-radius: 8px; border: 1px solid var(--border); flex-wrap: wrap; }
   .lang-pill{
     font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 500; padding: 0.4rem 0.75rem;
@@ -610,37 +610,37 @@
   }
   .lang-pill:hover{ color: var(--text); }
   .lang-pill.active{ background: var(--surface); color: var(--text); box-shadow: var(--shadow-sm); font-weight: 600; }
-
+ 
   .editor-wrap{ border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
   .editor-topbar{ background: var(--bg); border-bottom: 1px solid var(--border); padding: 0.5rem 0.9rem; display: flex; align-items: center; gap: 0.4rem; }
   .dot{ width: 9px; height: 9px; border-radius: 50%; }
   .dot.r{ background: #ff5f57; } .dot.y{ background: #febc2e; } .dot.g{ background: #28c840; }
   .editor-filename{ margin-left: 0.6rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-faint); }
   .editor-counter{ margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-faint); }
-
+ 
   textarea.editor-input{
     width: 100%; min-height: 320px; border: none; background: #1a1d21; color: #e4e7ec;
     padding: 1rem 1.1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.7;
     resize: vertical; outline: none; display: block;
   }
   textarea.editor-input::placeholder{ color: #667085; }
-
+ 
   textarea.prose-input{
     width: 100%; min-height: 320px; border: none; background: var(--surface); color: var(--text);
     padding: 1.1rem 1.2rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.75;
     resize: vertical; outline: none; display: block;
   }
   textarea.prose-input::placeholder{ color: var(--text-faint); }
-
+ 
   input.math-input{
     width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1rem;
     font-family: 'JetBrains Mono', monospace; font-size: 1.05rem; outline: none; background: var(--bg); color: var(--text);
   }
   input.math-input:focus{ border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-bg); }
-
+ 
   .action-row{ display: flex; gap: 0.7rem; margin-top: 1rem; align-items: center; }
   .hint-text{ font-size: 0.78rem; color: var(--text-faint); margin-top: 0.6rem; }
-
+ 
   button.btn{
     font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 600; padding: 0.65rem 1.15rem;
     border-radius: 8px; cursor: pointer; border: 1px solid transparent; transition: transform 0.12s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
@@ -655,7 +655,7 @@
   button.btn.secondary:hover{ background: var(--bg); color: var(--text); }
   button.btn.icon-btn{ padding: 0.5rem 0.7rem; background: var(--bg); color: var(--text-muted); border-color: var(--border); font-size: 0.8rem; }
   button.btn.icon-btn:hover{ color: var(--text); border-color: var(--primary); transform: translateY(-1px); }
-
+ 
   .history-row{ display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.9rem; }
   .history-chip{
     font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; background: var(--bg); border: 1px solid var(--border);
@@ -663,18 +663,18 @@
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: all 0.15s ease;
   }
   .history-chip:hover{ border-color: var(--primary); color: var(--text); }
-
+ 
   .empty-state{ text-align: center; padding: 3.2rem 1.5rem; color: var(--text-faint); }
   .empty-state .icon{ font-size: 1.8rem; margin-bottom: 0.7rem; display: block; opacity: 0.6; }
   .empty-state p{ margin: 0; font-size: 0.92rem; }
-
+ 
   .clean-state{ text-align: center; padding: 2.6rem 1.5rem; }
   .clean-state .badge{
     display: inline-flex; align-items: center; gap: 0.4rem; background: var(--green-bg); color: var(--green);
     font-weight: 600; font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 20px;
   }
   .clean-state p{ margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; }
-
+ 
   .summary-row{ display: flex; gap: 0.7rem; margin-bottom: 1.1rem; flex-wrap: wrap; }
   .summary-chip{ flex: 1; min-width: 80px; text-align: center; padding: 0.8rem 0.5rem; border-radius: 8px; border: 1px solid var(--border); }
   .summary-chip .num{ display: block; font-size: 1.5rem; font-weight: 800; line-height: 1; }
@@ -682,7 +682,7 @@
   .summary-chip.high{ background: var(--red-bg); } .summary-chip.high .num{ color: var(--red); }
   .summary-chip.medium{ background: var(--amber-bg); } .summary-chip.medium .num{ color: var(--amber); }
   .summary-chip.low{ background: var(--green-bg); } .summary-chip.low .num{ color: var(--green); }
-
+ 
   .issue-list{ display: flex; flex-direction: column; gap: 0.7rem; max-height: 520px; overflow-y: auto; padding-right: 0.25rem; }
   .issue{ border: 1px solid var(--border); border-radius: 8px; padding: 0.95rem 1.05rem; border-left-width: 3px; }
   .issue.high{ border-left-color: var(--red); } .issue.medium{ border-left-color: var(--amber); } .issue.low{ border-left-color: var(--green); }
@@ -695,9 +695,19 @@
   .issue-code .lineno{ color: #667085; margin-right: 0.5rem; } .issue-code .code{ color: #f5c518; }
   .issue-fix{ margin-top: 0.6rem; font-size: 0.83rem; color: var(--text); background: var(--primary-bg); border-radius: 6px; padding: 0.5rem 0.7rem; }
   .issue-fix b{ color: var(--primary-dark); }
-
+  .issue-suggestion{
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(59, 130, 246, 0.08);
+    color: var(--text-secondary, #64748b);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .issue-suggestion strong{ color: var(--text-primary, #1e293b); }
+ 
   .result-actions{ display:flex; gap:0.5rem; margin-top:1rem; }
-
+ 
   .learning-panel{ margin-top: 1.5rem; }
   .step-list{ display: flex; flex-direction: column; }
   .step-item{ display: flex; gap: 1rem; align-items: flex-start; padding: 0.85rem 0; border-bottom: 1px solid var(--border); }
@@ -707,7 +717,7 @@
   .step-item.done .step-text{ text-decoration: line-through; color: var(--text-faint); }
   .step-item.done .step-num{ background: var(--green-bg); color: var(--green); }
   .step-text{ font-size: 0.9rem; padding-top: 0.15rem; }
-
+ 
   .math-result{ text-align: center; padding: 1.5rem 1rem; }
   .math-result .answer{ font-family: 'JetBrains Mono', monospace; font-size: 2rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.4rem; }
   .math-result .expr{ font-family: 'JetBrains Mono', monospace; color: var(--text-muted); font-size: 0.95rem; }
@@ -715,14 +725,14 @@
   .math-step-row{ display: flex; gap: 0.8rem; padding: 0.65rem 0; border-bottom: 1px dashed var(--border); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; align-items: baseline; }
   .math-step-row:last-child{ border-bottom: none; }
   .math-step-label{ color: var(--text-muted); font-family: 'Inter', sans-serif; font-size: 0.78rem; min-width: 90px; flex-shrink: 0; }
-
+ 
   .example-list{ display: flex; flex-direction: column; gap: 0.5rem; }
   .example-btn{
     text-align: left; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.55rem 0.8rem;
     font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--text); cursor: pointer; transition: all 0.15s ease;
   }
   .example-btn:hover{ border-color: var(--primary); background: var(--primary-bg); }
-
+ 
   .grammar-score-wrap{
     display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.1rem; padding: 1rem 1.1rem;
     border: 1px solid var(--border); border-radius: 8px; background: var(--bg);
@@ -730,13 +740,13 @@
   .grammar-score-ring{ width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; flex-shrink: 0; color: #fff; }
   .grammar-score-meta{ font-size: 0.85rem; color: var(--text-muted); }
   .grammar-score-meta b{ color: var(--text); font-size: 1rem; display:block; margin-bottom:0.15rem; }
-
+ 
   .highlighted-text{ border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.1rem; font-size: 0.92rem; line-height: 1.85; background: var(--bg); white-space: pre-wrap; }
   .flag{ background: var(--amber-bg); border-bottom: 2px solid var(--amber); border-radius: 2px; padding: 0 1px; }
   .flag.high{ background: var(--red-bg); border-bottom-color: var(--red); }
-
+ 
   footer.site-footer{ text-align: center; padding: 2rem 1rem 3rem; font-size: 0.8rem; color: var(--text-faint); }
-
+ 
   /* ============ TOAST ============ */
   .toast-wrap{ position: fixed; bottom: 1.5rem; right: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; z-index: 100; }
   .toast{
@@ -746,37 +756,135 @@
   }
   @keyframes toastIn{ from{ opacity:0; transform: translateY(10px);} to{ opacity:1; transform: translateY(0);} }
   @keyframes toastOut{ to{ opacity:0; transform: translateY(-6px); } }
-
+ 
   @media (prefers-reduced-motion: reduce){ *{ transition: none !important; animation: none !important; } }
+
+  /* =========================================================
+     CODE CRUSADER BRAND THEME
+     ========================================================= */
+  :root{
+    --cc-cyan:#22d3ee; --cc-blue:#168cff; --cc-purple:#8b5cf6;
+    --cc-deep:#07111f; --cc-panel:#0d1728; --cc-panel-2:#111d31;
+    --cc-border:rgba(56,189,248,.18); --cc-text:#f4f7fb; --cc-muted:#9aa9bd;
+    --primary:var(--cc-blue); --primary-dark:#0967c9; --primary-light:var(--cc-purple);
+    --primary-bg:rgba(34,211,238,.10);
+    --bg:#060b14; --surface:#0c1422; --text:var(--cc-text);
+    --text-muted:var(--cc-muted); --border:var(--cc-border);
+    --shadow-sm:0 4px 18px rgba(0,0,0,.20); --shadow-md:0 10px 35px rgba(0,0,0,.28);
+    --shadow-lg:0 20px 60px rgba(0,0,0,.40);
+  }
+  html[data-theme="dark"]{
+    --bg:#060b14; --surface:#0c1422; --border:var(--cc-border);
+    --text:var(--cc-text); --text-muted:var(--cc-muted); --text-faint:#718198;
+  }
+  body{
+    background:radial-gradient(circle at 80% 5%,rgba(139,92,246,.12),transparent 30%),
+      radial-gradient(circle at 10% 90%,rgba(34,211,238,.08),transparent 30%),#060b14;
+    color:var(--cc-text);
+  }
+  .sidebar{background:linear-gradient(180deg,#07101d 0%,#050b14 100%);border-right:1px solid rgba(34,211,238,.12);}
+  .sidebar-brand{padding:1rem 1.1rem;background:rgba(255,255,255,.015);}
+  .sidebar-brand .mark{display:none;}
+  .cc-mascot{
+    width:52px;height:52px;object-fit:contain;border-radius:50%;display:block;flex-shrink:0;
+    filter:drop-shadow(0 0 10px rgba(34,211,238,.30)) drop-shadow(0 0 16px rgba(139,92,246,.18));
+    transition:transform .25s ease,filter .25s ease;
+  }
+  .cc-mascot:hover{transform:scale(1.06);}
+  .cc-brand-name{display:flex;flex-direction:column;line-height:1.05;min-width:0;}
+  .cc-brand-name strong{font-family:var(--font-display);font-size:.88rem;letter-spacing:.04em;color:#fff;white-space:nowrap;}
+  .cc-brand-name small{
+    margin-top:.25rem;font-size:.55rem;letter-spacing:.14em;font-weight:700;
+    background:linear-gradient(90deg,var(--cc-cyan),var(--cc-purple));
+    -webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap;
+  }
+  .topbar{background:rgba(6,11,20,.88);border-bottom:1px solid rgba(34,211,238,.12);backdrop-filter:blur(16px);}
+  .breadcrumb{display:flex;align-items:center;gap:.55rem;}
+  .breadcrumb-mascot{width:30px;height:30px;object-fit:contain;border-radius:50%;filter:drop-shadow(0 0 7px rgba(34,211,238,.35));flex-shrink:0;}
+  .breadcrumb strong{color:#fff;font-family:var(--font-display);letter-spacing:.03em;}
+  .hero{
+    background:radial-gradient(circle at 82% 25%,rgba(139,92,246,.28),transparent 34%),
+      radial-gradient(circle at 65% 80%,rgba(34,211,238,.18),transparent 30%),
+      linear-gradient(135deg,#081524 0%,#0b1830 50%,#11112c 100%);
+    border:1px solid rgba(34,211,238,.16);
+    box-shadow:0 20px 70px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.04);
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(34,211,238,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(34,211,238,.035) 1px,transparent 1px);
+    background-size:36px 36px;pointer-events:none;
+  }
+  .hero > *{position:relative;z-index:3;}
+  .hero-eyebrow{color:var(--cc-cyan);letter-spacing:.14em;}
+  .hero h1{font-weight:800;letter-spacing:-.035em;}
+  .hero h1 .logic-word{
+    background:linear-gradient(90deg,var(--cc-cyan),var(--cc-blue),var(--cc-purple));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero-mascot{
+    position:absolute;right:3rem;bottom:-2rem;width:270px;height:270px;object-fit:contain;
+    filter:drop-shadow(0 0 20px rgba(34,211,238,.22)) drop-shadow(0 20px 30px rgba(0,0,0,.35));
+    z-index:2;transition:transform .35s ease;
+  }
+  .hero:hover .hero-mascot{transform:translateY(-7px) scale(1.025);}
+  .hero-btn:not(.ghost){
+    background:linear-gradient(135deg,var(--cc-blue),var(--cc-purple));color:#fff;
+    box-shadow:0 8px 24px rgba(22,140,255,.25);
+  }
+  .hero-btn:not(.ghost):hover{box-shadow:0 12px 30px rgba(34,211,238,.30);}
+  .panel,.stat-card,.steps-panel,.feature-card{
+    background:linear-gradient(145deg,rgba(17,29,49,.96),rgba(10,20,34,.96));
+    border-color:rgba(34,211,238,.12);box-shadow:0 8px 30px rgba(0,0,0,.20);
+  }
+  .panel:hover,.feature-card:hover{
+    border-color:rgba(34,211,238,.30);
+    box-shadow:0 12px 40px rgba(0,0,0,.30),0 0 0 1px rgba(34,211,238,.04);
+  }
+  .feature-icon{box-shadow:0 0 20px rgba(34,211,238,.08);}
+  .editor-wrap{border-color:rgba(34,211,238,.16);box-shadow:0 10px 35px rgba(0,0,0,.28);}
+  .editor-topbar{background:#08111e;} textarea.editor-input{background:#050b14;}
+  a,.section-label,.page-head h1{color:var(--cc-cyan);}
+  ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--cc-blue),var(--cc-purple));}
+  ::-webkit-scrollbar-track{background:#050b14;}
+  @media (max-width:900px){
+    .hero-mascot{width:150px;height:150px;right:.5rem;bottom:-.5rem;opacity:.85;}
+    .hero{padding-right:7rem;}
+    .cc-brand-name{display:none;}
+    .sidebar-brand{justify-content:center;padding:.9rem .5rem;}
+  }
+  @media (max-width:600px){
+    .hero-mascot{position:relative;width:120px;height:120px;right:auto;bottom:auto;margin:1rem auto 0;display:block;}
+    .hero{padding-right:1.5rem;text-align:center;}
+  }
+
 </style>
 </head>
 <body>
-
+ 
 <div class="app-shell">
-
+ 
   <!-- ============ SIDEBAR / CONTENT BAR ============ -->
   <aside class="sidebar">
     <div class="sidebar-brand" data-nav="home">
-      <span class="mark">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="10.5" cy="10.5" r="6.5" stroke="#fff" stroke-width="2.2"/>
-          <line x1="15.3" y1="15.3" x2="21" y2="21" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
-          <path d="M7.3 10.7l2 2 3.6-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <span>Analyzer Suite</span>
+      <img src="assets/code-crusader-mascot.png" alt="Code Crusader mascot" class="cc-mascot">
+      <div class="cc-brand-name">
+        <strong>CODE CRUSADER</strong>
+        <small>LOGIC DECODED</small>
+      </div>
     </div>
-
+ 
     <nav class="sidebar-nav">
       <div class="sidebar-section-label">Overview</div>
       <button class="nav-item active" data-nav="home"><span class="icon">🏠</span><span>Home</span></button>
-
+ 
       <div class="sidebar-section-label">Tools</div>
       <button class="nav-item" data-nav="bugs"><span class="icon">🐞</span><span>Bug Scanner</span><span class="badge-count" id="navCountBugs" style="display:none;">0</span></button>
       <button class="nav-item" data-nav="math"><span class="icon">Σ</span><span>Math Solver</span></button>
       <button class="nav-item" data-nav="grammar"><span class="icon">✎</span><span>Grammar Checker</span><span class="badge-count" id="navCountGrammar" style="display:none;">0</span></button>
     </nav>
-
+ 
     <div class="sidebar-footer">
       <div class="theme-toggle-row">
         <span>Dark mode</span>
@@ -796,32 +904,38 @@
       <div class="sidebar-note">Everything runs locally in your browser. Nothing you type is ever sent anywhere.</div>
     </div>
   </aside>
-
+ 
   <!-- ============ MAIN AREA ============ -->
   <div class="main-area">
     <div class="topbar">
-      <div class="breadcrumb" id="breadcrumb"><svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2"/><line x1="15.3" y1="15.3" x2="21" y2="21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M7.3 10.7l2 2 3.6-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Analyzer Suite / <b>Home</b></div>
+      <div class="breadcrumb" id="breadcrumb">
+        <img src="assets/code-crusader-mascot.png" alt="" class="breadcrumb-mascot">
+        <strong>CODE CRUSADER</strong>
+        <span>/</span>
+        <b>Home</b>
+      </div>
       <div class="topbar-right">
         <span><span class="kbd">Ctrl</span>+<span class="kbd">Enter</span> to run</span>
       </div>
     </div>
-
+ 
     <div class="content">
-
+ 
       <!-- ============ HOME PAGE ============ -->
       <div class="view active" id="view-home">
         <div class="hero">
           <span class="hero-blob b1"></span>
           <span class="hero-blob b2"></span>
           <span class="hero-blob b3"></span>
-          <div class="hero-eyebrow">👋 Analyzer Suite</div>
-          <h1>Three tools to check your work, in one place.</h1>
-          <p>Scan code for common bugs, solve arithmetic and algebra with step-by-step working, or check a paragraph for grammar and clarity issues — all instantly, all in your browser.</p>
+          <div class="hero-eyebrow">CODE CRUSADER</div>
+          <h1><span class="logic-word">Logic,</span> decoded.</h1>
+          <p>Your intelligent problem-solving companion for code, mathematics and writing. Find errors, understand why they happen, and solve them.</p>
           <div class="hero-actions">
-            <button class="hero-btn" data-nav="bugs"><svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a4 4 0 0 1 4 4v1.2a5.6 5.6 0 0 1 2.2 1.8H21v2h-2.1a5.6 5.6 0 0 1 .1.9v.6H21v2h-2v1.5a5.6 5.6 0 0 1-.3 1.5H21v2h-2.9A6 6 0 0 1 12 22a6 6 0 0 1-6.1-4.5H3v-2h2.2a5.6 5.6 0 0 1-.3-1.5V12.5H3v-2h2.1a5.6 5.6 0 0 1 .1-.9H3v-2h2.8a5.6 5.6 0 0 1 2.2-1.8V7a4 4 0 0 1 4-4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="12" y1="10" x2="12" y2="18" stroke="currentColor" stroke-width="1.3"/></svg>Scan some code</button>
-            <button class="hero-btn ghost" data-nav="math"><svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 5H7l5 7-5 7h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Solve a problem</button>
-            <button class="hero-btn ghost" data-nav="grammar"><svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20l1-4.2L15.3 5.5a1.5 1.5 0 0 1 2.1 0l1.1 1.1a1.5 1.5 0 0 1 0 2.1L8.2 19 4 20z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 7.5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Check my writing</button>
+            <button class="hero-btn" data-nav="bugs">&lt;/&gt;&nbsp; Debug Code</button>
+            <button class="hero-btn ghost" data-nav="math">Σ&nbsp; Solve Maths</button>
+            <button class="hero-btn ghost" data-nav="grammar">Aa&nbsp; Check Writing</button>
           </div>
+          <img src="assets/code-crusader-mascot.png" alt="Code Crusader — your logic-solving companion" class="hero-mascot">
         </div>
 
         <div class="stats-row">
@@ -829,7 +943,7 @@
           <div class="stat-card"><span class="stat-icon">Σ</span><div><span class="stat-num" id="statMath">0</span><div class="stat-lbl">Problems solved</div></div></div>
           <div class="stat-card"><span class="stat-icon">✎</span><div><span class="stat-num" id="statGrammar">0</span><div class="stat-lbl">Texts checked</div></div></div>
         </div>
-
+ 
         <div class="section-label" style="display:flex; align-items:center; justify-content:space-between;">
           <span>Choose a tool</span>
           <span style="font-weight:500; text-transform:none; letter-spacing:normal; color:var(--text-faint); font-size:0.78rem;">✥ drag cards to reorder</span>
@@ -838,35 +952,35 @@
           <button class="feature-card" data-nav="bugs" draggable="true">
             <span class="drag-handle">✥</span>
             <div class="feature-icon bugs">🐞</div>
-            <h3>Bug Scanner</h3>
-            <p>Paste Python, JavaScript, Java, C++, or HTML and catch common mistakes — bare excepts, loose equality, off-by-one loops, missing alt text, and more — each with a suggested fix.</p>
-            <div class="go">Open Bug Scanner →</div>
+            <h3>Debug Chamber</h3>
+            <p>Find the flaw. Understand the logic. Scan Python, JavaScript, Java, C++, or HTML for common mistakes with suggested fixes.</p>
+            <div class="go">Open Debug Chamber →</div>
           </button>
           <button class="feature-card" data-nav="math" draggable="true">
             <span class="drag-handle">✥</span>
             <div class="feature-icon math">Σ</div>
-            <h3>Math Solver</h3>
-            <p>Evaluate arithmetic expressions or solve linear and quadratic equations for x, with the working shown step by step.</p>
-            <div class="go">Open Math Solver →</div>
+            <h3>Logic Solver</h3>
+            <p>Work through the problem, step by step. Evaluate expressions and solve linear or quadratic equations with the working shown.</p>
+            <div class="go">Open Logic Solver →</div>
           </button>
           <button class="feature-card" data-nav="grammar" draggable="true">
             <span class="drag-handle">✥</span>
             <div class="feature-icon grammar">✎</div>
-            <h3>Grammar Checker</h3>
-            <p>Catch punctuation slips, spelling mistakes, mixed-up words, run-on sentences, and passive voice, with one-click fixes and a writing score.</p>
-            <div class="go">Open Grammar Checker →</div>
+            <h3>Grammar Guard</h3>
+            <p>Catch mistakes. Strengthen your writing. Spot punctuation, spelling, wording, run-on sentence, and passive-voice issues.</p>
+            <div class="go">Open Grammar Guard →</div>
           </button>
         </div>
-
+ 
         <div class="steps-panel">
           <div class="section-label" style="margin-bottom:0;">How it works</div>
           <div class="steps-row">
-            <div class="step-block"><div class="num">1</div><div><h4>Pick a tool</h4><p>Choose Bug Scanner, Math Solver, or Grammar Checker from the sidebar.</p></div></div>
+            <div class="step-block"><div class="num">1</div><div><h4>Pick a tool</h4><p>Choose Debug Chamber, Logic Solver, or Grammar Guard from the sidebar.</p></div></div>
             <div class="step-block"><div class="num">2</div><div><h4>Paste your content</h4><p>Drop in code, an equation, or a paragraph — or try one of the built-in examples.</p></div></div>
             <div class="step-block"><div class="num">3</div><div><h4>Get instant feedback</h4><p>See issues, fixes, and steps immediately — everything runs on-device.</p></div></div>
           </div>
         </div>
-
+ 
         <div class="panel theme-panel">
           <div class="panel-head"><h2><svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.5a4.3 4.3 0 0 0 0 17c1 0 1.6-.5 1.6-1.3 0-.4-.15-.7-.4-1-.25-.3-.4-.6-.4-1 0-.8.65-1.4 1.45-1.4H15.6c2 0 3.6-1.6 3.6-3.6 0-4.2-3.4-8.7-7.2-8.7z" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.3"/><circle cx="9" cy="9.5" r="1" fill="currentColor"/><circle cx="14.5" cy="8.5" r="1" fill="currentColor"/><circle cx="8.5" cy="14" r="1" fill="currentColor"/></svg>Color scheme</h2></div>
           <div class="panel-body">
@@ -881,17 +995,17 @@
           </div>
         </div>
       </div>
-
+ 
       <!-- ============ PAGE: BUG SCANNER ============ -->
       <div class="view" id="view-bugs">
         <div class="page-head">
           <div>
-            <h1>🐞 Bug Scanner</h1>
+            <h1>⚔️ Debug Chamber</h1>
             <p>Paste your code, run a scan, and get a personalized set of things to study based on what came up.</p>
           </div>
           <button class="back-link" data-nav="home">← Back to home</button>
         </div>
-
+ 
         <div class="grid">
           <section class="panel">
             <div class="panel-head">
@@ -920,7 +1034,7 @@
               <div class="history-row" id="bugHistoryRow"></div>
             </div>
           </section>
-
+ 
           <section class="panel">
             <div class="panel-head">
               <h2><svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 12l3 3 6-6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Results</h2>
@@ -933,23 +1047,23 @@
             </div>
           </section>
         </div>
-
+ 
         <section class="panel learning-panel" id="learningPanel" style="display:none;">
           <div class="panel-head"><h2>Suggested learning path</h2><span style="font-size:0.78rem; color:var(--text-faint);">Click a step to mark it done</span></div>
           <div class="panel-body"><div class="step-list" id="stepList"></div></div>
         </section>
       </div>
-
+ 
       <!-- ============ PAGE: MATH SOLVER ============ -->
       <div class="view" id="view-math">
         <div class="page-head">
           <div>
-            <h1>Σ Math Solver</h1>
+            <h1>Σ Logic Solver</h1>
             <p>Type an expression to calculate, or an equation with "=" to solve for x — see the steps behind the answer.</p>
           </div>
           <button class="back-link" data-nav="home">← Back to home</button>
         </div>
-
+ 
         <div class="grid">
           <section class="panel">
             <div class="panel-head"><h2>Enter a problem</h2></div>
@@ -960,7 +1074,7 @@
                 <button class="btn secondary" id="mathClearBtn">Clear</button>
               </div>
               <div class="history-row" id="mathHistoryRow"></div>
-
+ 
               <div style="margin-top:1.4rem;">
                 <div class="section-label" style="margin-bottom:0.6rem;">Try an example</div>
                 <div class="example-list" id="mathExamples">
@@ -973,7 +1087,7 @@
               </div>
             </div>
           </section>
-
+ 
           <section class="panel">
             <div class="panel-head"><h2><svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 5H7l5 7-5 7h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Solution</h2></div>
             <div class="panel-body">
@@ -984,17 +1098,17 @@
           </section>
         </div>
       </div>
-
+ 
       <!-- ============ PAGE: GRAMMAR CHECKER ============ -->
       <div class="view" id="view-grammar">
         <div class="page-head">
           <div>
-            <h1>✎ Grammar Checker</h1>
+            <h1>✎ Grammar Guard</h1>
             <p>Paste text to catch punctuation slips, spelling mistakes, mixed-up words, run-ons, and other common writing issues — with one-click fixes for spelling.</p>
           </div>
           <button class="back-link" data-nav="home">← Back to home</button>
         </div>
-
+ 
         <div class="grid">
           <section class="panel">
             <div class="panel-head">
@@ -1012,7 +1126,7 @@
               <div class="history-row" id="grammarHistoryRow"></div>
             </div>
           </section>
-
+ 
           <section class="panel">
             <div class="panel-head">
               <h2><svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20l1-4.2L15.3 5.5a1.5 1.5 0 0 1 2.1 0l1.1 1.1a1.5 1.5 0 0 1 0 2.1L8.2 19 4 20z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 7.5l3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Feedback</h2>
@@ -1025,21 +1139,21 @@
             </div>
           </section>
         </div>
-
+ 
         <section class="panel learning-panel" id="grammarPreviewPanel" style="display:none;">
           <div class="panel-head"><h2>Your text, with issues marked</h2></div>
           <div class="panel-body"><div class="highlighted-text" id="highlightedText"></div></div>
         </section>
       </div>
-
+ 
     </div>
-
-    <footer class="site-footer">Analyzer Suite — runs entirely on-device, nothing you type ever leaves your browser.</footer>
+ 
+    <footer class="site-footer">Code Crusader — runs entirely on-device, nothing you type ever leaves your browser.</footer>
   </div>
 </div>
-
+ 
 <div class="toast-wrap" id="toastWrap"></div>
-
+ 
 <script>
 (function(){
   // =================================================================
@@ -1048,7 +1162,7 @@
   function escapeHtml(str){
     return str.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
-
+ 
   const toastWrap = document.getElementById('toastWrap');
   function showToast(msg, icon){
     const el = document.createElement('div');
@@ -1057,7 +1171,7 @@
     toastWrap.appendChild(el);
     setTimeout(() => el.remove(), 2600);
   }
-
+ 
   function copyToClipboard(text, label){
     if (navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(text).then(() => showToast((label||'Copied') + ' to clipboard', '📋'))
@@ -1066,7 +1180,7 @@
       showToast('Clipboard not available in this browser.', '⚠️');
     }
   }
-
+ 
   // ---------- Confetti celebration ----------
   const CONFETTI_COLORS = ['#4f46e5','#7c72f5','#22c55e','#f59e0b','#ec4899','#0ea5e9'];
   function fireConfetti(originEl){
@@ -1090,23 +1204,23 @@
       setTimeout(() => piece.remove(), dur + 60);
     }
   }
-
+ 
   // ---------- Upbeat message pools ----------
   const CLEAN_PHRASES_CODE = ['Squeaky clean!', 'Nice one — no issues found!', "You're all set!", 'Great catch-free code!'];
   const CLEAN_PHRASES_TEXT = ['Looks clean!', 'Nice writing!', "You're good to go!", 'Great job!'];
   const FOUND_PHRASES = ['Found a few things to fix', "Here's what came up", 'A few leads to check out'];
   const LOADING_PHRASES_CODE = ['Scanning for gremlins…', 'Reading between the lines…', 'Checking the logic…', 'Almost there…'];
   const LOADING_PHRASES_TEXT = ['Reading closely…', 'Checking the details…', 'Polishing pass…', 'Almost done…'];
-
+ 
   function pick(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
-
+ 
   function rotateLoadingText(el, phrases, ms){
     let i = 0;
     el.textContent = phrases[0];
     const id = setInterval(() => { i = (i + 1) % phrases.length; el.textContent = phrases[i]; }, ms);
     return () => clearInterval(id);
   }
-
+ 
   // =================================================================
   // THEME TOGGLE
   // =================================================================
@@ -1118,7 +1232,7 @@
     themeSwitch.classList.toggle('on', darkMode);
     showToast(darkMode ? 'Dark mode on' : 'Light mode on', darkMode ? '🌙' : '☀️');
   });
-
+ 
   // ---------- Compact mode (flexible density) ----------
   const compactSwitch = document.getElementById('compactSwitch');
   let compactMode = false;
@@ -1128,7 +1242,7 @@
     compactSwitch.classList.toggle('on', compactMode);
     showToast(compactMode ? 'Compact mode on' : 'Comfortable spacing restored', '📐');
   });
-
+ 
   // ---------- Text size (flexible accessibility) ----------
   let textScale = 100;
   const textSizeUp = document.getElementById('textSizeUp');
@@ -1148,7 +1262,7 @@
     applyTextScale();
     showToast('Text size decreased', '🔎');
   });
-
+ 
   // =================================================================
   // COLOR SCHEME PICKER
   // =================================================================
@@ -1161,26 +1275,26 @@
     [...themePicker.children].forEach(b => b.classList.toggle('active', b === btn));
     showToast(`${btn.dataset.label} theme applied`, '🎨');
   });
-
+ 
   // =================================================================
   // NAVIGATION (sidebar + home links act as router)
   // =================================================================
   const views = { home: document.getElementById('view-home'), bugs: document.getElementById('view-bugs'), math: document.getElementById('view-math'), grammar: document.getElementById('view-grammar') };
   const navItems = document.querySelectorAll('.nav-item');
   const breadcrumb = document.getElementById('breadcrumb');
-  const pageLabels = { home: 'Home', bugs: 'Bug Scanner', math: 'Math Solver', grammar: 'Grammar Checker' };
-
+  const pageLabels = { home: 'Home', bugs: 'Debug Chamber', math: 'Logic Solver', grammar: 'Grammar Guard' };
+ 
   function goTo(page){
     Object.entries(views).forEach(([key, el]) => el.classList.toggle('active', key === page));
     navItems.forEach(b => b.classList.toggle('active', b.dataset.nav === page));
-    breadcrumb.innerHTML = `<svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2"/><line x1="15.3" y1="15.3" x2="21" y2="21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M7.3 10.7l2 2 3.6-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Analyzer Suite / <b>${pageLabels[page]}</b>`;
+    breadcrumb.innerHTML = `<img src="assets/code-crusader-mascot.png" alt="" class="breadcrumb-mascot"><strong>CODE CRUSADER</strong><span>/</span><b>${pageLabels[page]}</b>`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
+ 
   document.querySelectorAll('[data-nav]').forEach(el => {
     el.addEventListener('click', () => goTo(el.dataset.nav));
   });
-
+ 
   // ---------- Drag-to-reorder feature cards (flexible layout) ----------
   const featureGrid = document.getElementById('featureGrid');
   let dragEl = null;
@@ -1195,7 +1309,7 @@
       featureGrid.insertBefore(dragEl, before ? card : card.nextSibling);
     });
   });
-
+ 
   // =================================================================
   // SESSION STATS (for home page + sidebar badges)
   // =================================================================
@@ -1205,7 +1319,7 @@
   const statGrammar = document.getElementById('statGrammar');
   const navCountBugs = document.getElementById('navCountBugs');
   const navCountGrammar = document.getElementById('navCountGrammar');
-
+ 
   function animateStatEl(el, to){
     const from = parseInt(el.textContent, 10) || 0;
     if (to <= from){ el.textContent = to; return; }
@@ -1219,18 +1333,18 @@
     }
     requestAnimationFrame(tick);
   }
-
+ 
   function bumpStat(key){
     stats[key]++;
     if (key === 'bugs'){ animateStatEl(statBugs, stats.bugs); }
     if (key === 'math'){ animateStatEl(statMath, stats.math); }
     if (key === 'grammar'){ animateStatEl(statGrammar, stats.grammar); }
   }
-
+ 
   // simple in-memory history per tool (session only)
   const HISTORY_LIMIT = 5;
   const history = { bugs: [], math: [], grammar: [] };
-
+ 
   function pushHistory(key, value){
     if (!value || !value.trim()) return;
     history[key] = history[key].filter(v => v !== value);
@@ -1238,7 +1352,7 @@
     history[key] = history[key].slice(0, HISTORY_LIMIT);
     renderHistory(key);
   }
-
+ 
   function renderHistory(key){
     const rowMap = { bugs: 'bugHistoryRow', math: 'mathHistoryRow', grammar: 'grammarHistoryRow' };
     const row = document.getElementById(rowMap[key]);
@@ -1247,7 +1361,7 @@
     row.innerHTML = `<span style="font-size:0.72rem;color:var(--text-faint);align-self:center;margin-right:0.2rem;">Recent:</span>` +
       history[key].map((v,i) => `<button class="history-chip" data-key="${key}" data-idx="${i}" title="${escapeHtml(v.replace(/"/g,'&quot;'))}">${escapeHtml(v.slice(0,28).replace(/\n/g,' '))}${v.length>28?'…':''}</button>`).join('');
   }
-
+ 
   document.body.addEventListener('click', e => {
     const chip = e.target.closest('.history-chip');
     if (!chip) return;
@@ -1258,7 +1372,7 @@
     if (key === 'math'){ mathInput.value = val; solveMath(); }
     if (key === 'grammar'){ textInput.value = val; checkGrammar(); }
   });
-
+ 
   // =================================================================
   // PAGE: BUG SCANNER
   // =================================================================
@@ -1286,10 +1400,6 @@
         desc:'Comparing directly to True or False is redundant and less idiomatic.',
         fix:'Use "if value:" instead of "if value == True:".',
         concept:'Boolean Logic', learning:'Rely on truthiness — use "if value:" instead of "if value == True:".' },
-      { re: /print\s*\(/g, severity:'low', title:'Debug print statements',
-        desc:'Leftover print statements clutter output and don\u2019t respect log levels.',
-        fix:'Swap print() for logging.debug() or similar.',
-        concept:'Debugging', learning:'Swap print() for a proper logging framework with levels.' },
       { re: /range\(len\([^)]+\)\)/g, severity:'medium', title:'Using range(len()) pattern',
         desc:'Indexing manually through range(len(x)) is less readable than iterating directly.',
         fix:'Use enumerate(items) instead.',
@@ -1312,7 +1422,7 @@
         concept:'Memory Management', learning:'Match new[] with delete[], and plain new with plain delete.' },
     ],
   };
-
+ 
   const BUG_LEARNING_PATHS = {
     'Array Indexing': ['Understand zero-based indexing', 'Practice writing loop boundaries by hand', 'Learn built-in array iteration methods'],
     'Type Coercion': ['Learn the difference between == and ===', 'Study JavaScript type conversion rules', 'Practice comparing mixed types safely'],
@@ -1330,7 +1440,7 @@
     'Semantic HTML': ['Learn modern semantic elements (header, nav, main, footer)', 'Study why older presentational tags were phased out', 'Practice rewriting old markup using CSS equivalents'],
     'Performance': ['Learn how browsers parse HTML and scripts', 'Study the difference between async and defer', 'Practice auditing render-blocking resources'],
   };
-
+ 
   const BUG_EXAMPLES = {
     python: 'def calculate_total(items):\n    for i in range(len(items)):\n        pass\ntry:\n    result = calculate()\nexcept:\n    print("Error")\nif done == True:\n    print("finished")',
     javascript: 'for (let i = 0; i <= arr.length; i++) {\n    console.log(arr[i]);\n}\nvar x = 10;\nif (x == null) {\n    console.log("empty");\n}',
@@ -1338,9 +1448,9 @@
     cpp: 'int* arr = new int[10];\ndelete arr;\n',
     html: '<html>\n<head>\n<title>My Page</title>\n</head>\n<body>\n<img src="logo.png">\n<a href="#">Click here</a>\n<a href="https://example.com" target="_blank">External link</a>\n<center>Welcome!</center>\n<button onclick="doThing()">Go</button>\n<div id="box">A</div>\n<div id="box">B</div>\n</body>\n</html>',
   };
-
+ 
   const FILENAMES = { python:'main.py', javascript:'main.js', java:'Main.java', cpp:'main.cpp', html:'index.html' };
-
+ 
   let currentLang = 'python';
   const codeInput = document.getElementById('codeInput');
   const langRow = document.getElementById('langRow');
@@ -1351,7 +1461,7 @@
   const filenameLabel = document.getElementById('filenameLabel');
   const analyzeBtn = document.getElementById('analyzeBtn');
   const codeCounter = document.getElementById('codeCounter');
-
+ 
   function setLanguage(lang){
     currentLang = lang;
     [...langRow.children].forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
@@ -1359,14 +1469,14 @@
     filenameLabel.textContent = FILENAMES[lang] || 'main';
     updateCodeCounter();
   }
-
+ 
   function updateCodeCounter(){
     const lines = codeInput.value ? codeInput.value.split('\n').length : 0;
     codeCounter.textContent = `${lines} line${lines === 1 ? '' : 's'}`;
   }
   codeInput.addEventListener('input', updateCodeCounter);
   codeInput.addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') analyzeCode(); });
-
+ 
   function detectBugs(code, lang){
     const patterns = BUG_PATTERNS[lang] || [];
     const bugs = [];
@@ -1382,29 +1492,29 @@
     bugs.sort((a,b) => a.line - b.line);
     return bugs;
   }
-
+ 
   // ---- Dedicated HTML checks (structure, accessibility, security, performance) ----
   function detectHtmlBugs(code){
     const bugs = [];
     const lineOf = idx => code.slice(0, idx).split('\n').length;
-
+ 
     if (!/<!DOCTYPE\s+html/i.test(code)){
       bugs.push({ severity:'medium', title:'Missing <!DOCTYPE html>', description:'Without a doctype, browsers can render the page in quirks mode with inconsistent, hard-to-debug behavior.', fix:'Add <!DOCTYPE html> as the very first line of the document.', concept:'HTML Structure', match:'(document start)', line:1 });
     }
-
+ 
     const htmlTagMatch = /<html\b[^>]*>/i.exec(code);
     if (htmlTagMatch && !/\blang\s*=/i.test(htmlTagMatch[0])){
       bugs.push({ severity:'medium', title:'Missing lang attribute', description:'The <html> tag has no lang attribute, which hurts accessibility and screen-reader pronunciation.', fix:'Add lang="en" (or the appropriate language code) to <html>.', concept:'Accessibility', match: htmlTagMatch[0], line: lineOf(htmlTagMatch.index) });
     }
-
+ 
     if (!/<meta[^>]+charset/i.test(code)){
       bugs.push({ severity:'medium', title:'Missing charset declaration', description:'No <meta charset="UTF-8"> was found — text encoding may not render correctly for all characters.', fix:'Add <meta charset="UTF-8"> near the top of <head>.', concept:'HTML Structure', match:'(missing in <head>)', line:1 });
     }
-
+ 
     if (!/<meta[^>]+viewport/i.test(code)){
       bugs.push({ severity:'low', title:'Missing viewport meta tag', description:'Without a viewport meta tag, the page may not scale correctly on mobile devices.', fix:'Add <meta name="viewport" content="width=device-width, initial-scale=1.0">.', concept:'Responsive Design', match:'(missing in <head>)', line:1 });
     }
-
+ 
     {
       const re = /<img\b[^>]*>/gi; let m;
       while ((m = re.exec(code)) !== null){
@@ -1413,7 +1523,7 @@
         }
       }
     }
-
+ 
     {
       const re = /<a\b[^>]*>/gi; let m;
       while ((m = re.exec(code)) !== null){
@@ -1425,21 +1535,21 @@
         }
       }
     }
-
+ 
     {
       const re = /\bon(click|load|mouseover|mouseout|change|submit|error|keydown|keyup)\s*=\s*["'][^"']*["']/gi; let m;
       while ((m = re.exec(code)) !== null){
         bugs.push({ severity:'low', title:`Inline event handler: on${m[1]}`, description:'Mixing JavaScript into HTML attributes makes code harder to maintain and can bypass stricter content security policies.', fix:'Move the logic into a <script> file and attach it with addEventListener instead.', concept:'Best Practices', match:m[0].slice(0,72), line:lineOf(m.index) });
       }
     }
-
+ 
     {
       const re = /<(font|center|marquee|blink|big|strike|tt)\b[^>]*>/gi; let m;
       while ((m = re.exec(code)) !== null){
         bugs.push({ severity:'low', title:`Deprecated tag: <${m[1].toLowerCase()}>`, description:'This tag is obsolete in modern HTML5 and may not render consistently across browsers.', fix:'Replace it with CSS (e.g. font-family, text-align, or an animation) instead.', concept:'Semantic HTML', match:m[0].slice(0,72), line:lineOf(m.index) });
       }
     }
-
+ 
     {
       const re = /<script\b[^>]*\bsrc\s*=\s*["'][^"']+["'][^>]*>/gi; let m;
       while ((m = re.exec(code)) !== null){
@@ -1448,14 +1558,14 @@
         }
       }
     }
-
+ 
     {
       const re = /<(img|br|hr|input|meta|link)\b[^>]*>\s*<\/\1>/gi; let m;
       while ((m = re.exec(code)) !== null){
         bugs.push({ severity:'low', title:`Unnecessary closing tag for <${m[1]}>`, description:`<${m[1]}> is a void element and shouldn\u2019t have a separate closing tag.`, fix:`Remove the </${m[1]}> — a single self-closing tag is enough.`, concept:'HTML Structure', match:m[0].slice(0,72), line:lineOf(m.index) });
       }
     }
-
+ 
     {
       const re = /\bid\s*=\s*["']([^"']+)["']/gi; let m;
       const seenIds = {};
@@ -1470,11 +1580,11 @@
         }
       });
     }
-
+ 
     bugs.sort((a,b) => a.line - b.line);
     return bugs;
   }
-
+ 
   function buildBugLearningPath(bugs){
     const concepts = [...new Set(bugs.map(b => b.concept))];
     const steps = [];
@@ -1484,15 +1594,15 @@
     }
     return steps.slice(0, 8);
   }
-
+ 
   function renderBugsEmpty(){
     resultsPanel.innerHTML = `<div class="empty-state"><span class="icon">↗</span><p>Run a scan to see results here.</p></div>`;
     learningPanel.style.display = 'none';
     resultCountLabel.textContent = '';
   }
-
+ 
   let lastBugReport = '';
-
+ 
   function renderBugResults(bugs){
     if (bugs.length === 0){
       resultsPanel.innerHTML = `<div class="clean-state"><div class="badge">✓ ${pick(CLEAN_PHRASES_CODE)}</div><p>Nothing matched our known bug patterns. Nice work.</p></div>`;
@@ -1505,7 +1615,7 @@
     const med = bugs.filter(b => b.severity === 'medium').length;
     const low = bugs.filter(b => b.severity === 'low').length;
     resultCountLabel.textContent = `${bugs.length} issue${bugs.length === 1 ? '' : 's'}`;
-
+ 
     let html = `<div class="summary-row">
         <div class="summary-chip high"><span class="num">${high}</span><span class="lbl">High</span></div>
         <div class="summary-chip medium"><span class="num">${med}</span><span class="lbl">Medium</span></div>
@@ -1526,7 +1636,7 @@
     resultsPanel.innerHTML = html;
     lastBugReport = reportText;
     document.getElementById('copyBugsBtn').addEventListener('click', () => copyToClipboard(lastBugReport, 'Bug report'));
-
+ 
     const path = buildBugLearningPath(bugs);
     stepList.innerHTML = path.map((step, i) => `<div class="step-item checkable" data-step="${i}"><div class="step-num">${i+1}</div><div class="step-text">${escapeHtml(step)}</div></div>`).join('');
     stepList.querySelectorAll('.step-item').forEach(el => {
@@ -1541,7 +1651,7 @@
     });
     learningPanel.style.display = '';
   }
-
+ 
   function analyzeCode(){
     const code = codeInput.value;
     if (!code.trim()){ renderBugsEmpty(); return; }
@@ -1560,7 +1670,7 @@
       showToast(bugs.length === 0 ? pick(CLEAN_PHRASES_CODE) : `${pick(FOUND_PHRASES)} — ${bugs.length} issue${bugs.length===1?'':'s'}`, bugs.length === 0 ? '🎉' : '🐞');
     }, 500);
   }
-
+ 
   langRow.addEventListener('click', e => {
     const btn = e.target.closest('.lang-pill');
     if (!btn) return;
@@ -1570,14 +1680,14 @@
   analyzeBtn.addEventListener('click', analyzeCode);
   document.getElementById('clearBtn').addEventListener('click', () => { codeInput.value = ''; updateCodeCounter(); renderBugsEmpty(); });
   setLanguage('python');
-
+ 
   // =================================================================
   // PAGE: MATH SOLVER
   // =================================================================
   const mathInput = document.getElementById('mathInput');
   const mathResultsPanel = document.getElementById('mathResultsPanel');
   const solveBtn = document.getElementById('solveBtn');
-
+ 
   function evaluateExpression(exprStr){
     let i = 0;
     const s = exprStr.replace(/\s+/g, '');
@@ -1630,7 +1740,7 @@
     if (i < s.length) error('Unexpected trailing input: ' + s.slice(i));
     return result;
   }
-
+ 
   function parsePolynomialSide(sideStr){
     let s = sideStr.replace(/\s+/g, '');
     if (s === '') return null;
@@ -1655,7 +1765,7 @@
     }
     return coeffs;
   }
-
+ 
   function solveEquation(eqStr){
     const parts = eqStr.split('=');
     if (parts.length !== 2) throw new Error('An equation needs exactly one "=" sign.');
@@ -1688,7 +1798,7 @@
     if (Math.abs(x1 - x2) < 1e-9) return { steps, answer: `x = ${fmtNum(x1)}`, detail: 'One repeated real solution (discriminant = 0).' };
     return { steps, answer: `x = ${fmtNum(x1)}  or  x = ${fmtNum(x2)}`, detail: 'Two real solutions.' };
   }
-
+ 
   function fmtNum(n){ const r = Math.round(n * 1e6) / 1e6; return String(r); }
   function fmtCoeff(v, sym, withSign){
     if (Math.abs(v) < 1e-12) return '';
@@ -1702,9 +1812,9 @@
     const sign = v < 0 ? '- ' : (withSign ? '+ ' : '');
     return ` ${sign}${fmtNum(Math.abs(v))}`;
   }
-
+ 
   function looksLikeEquation(str){ return str.includes('='); }
-
+ 
   function renderMathEmpty(){
     mathResultsPanel.innerHTML = `<div class="empty-state"><span class="icon">Σ</span><p>Enter a problem and press Solve.</p></div>`;
   }
@@ -1732,7 +1842,7 @@
       </div>`;
     document.getElementById('copyMathBtn').addEventListener('click', () => copyToClipboard(`${eqStr}  →  ${result.answer}`, 'Answer'));
   }
-
+ 
   function solveMath(){
     const raw = mathInput.value.trim();
     if (!raw){ renderMathEmpty(); return; }
@@ -1752,7 +1862,7 @@
       showToast('Could not solve that expression', '⚠️');
     }
   }
-
+ 
   solveBtn.addEventListener('click', solveMath);
   mathInput.addEventListener('keydown', e => { if (e.key === 'Enter' || ((e.ctrlKey || e.metaKey) && e.key === 'Enter')) solveMath(); });
   document.getElementById('mathClearBtn').addEventListener('click', () => { mathInput.value=''; renderMathEmpty(); });
@@ -1762,7 +1872,7 @@
     mathInput.value = btn.dataset.eq;
     solveMath();
   });
-
+ 
   // =================================================================
   // PAGE: GRAMMAR CHECKER
   // =================================================================
@@ -1773,32 +1883,303 @@
   const highlightedText = document.getElementById('highlightedText');
   const checkBtn = document.getElementById('checkBtn');
   const textCounter = document.getElementById('textCounter');
-
+ 
   function updateTextCounter(){
     const words = (textInput.value.match(/\b\w+\b/g) || []).length;
     textCounter.textContent = `${words} word${words === 1 ? '' : 's'}`;
   }
   textInput.addEventListener('input', updateTextCounter);
   textInput.addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') checkGrammar(); });
-
-  const CONFUSABLE_WORDS = {
-    'there': 'Commonly confused with "their" (possession) or "they\'re" (they are). Double-check usage.',
-    'their': 'Commonly confused with "there" (location) or "they\'re" (they are). Double-check usage.',
-    "they're": 'Commonly confused with "there" or "their". Double-check usage.',
-    'your': 'Commonly confused with "you\'re" (you are). Double-check usage.',
-    "you're": 'Commonly confused with "your" (possession). Double-check usage.',
-    'its': 'Commonly confused with "it\'s" (it is). Double-check usage.',
-    "it's": 'Commonly confused with "its" (possession). Double-check usage.',
-    'then': 'Commonly confused with "than" (comparison). Double-check usage.',
-    'than': 'Commonly confused with "then" (time/sequence). Double-check usage.',
-    'affect': 'Commonly confused with "effect" (usually a noun). Double-check usage.',
-    'effect': 'Commonly confused with "affect" (usually a verb). Double-check usage.',
-    'loose': 'Commonly confused with "lose". Double-check usage.',
-    'lose': 'Commonly confused with "loose". Double-check usage.',
-    'to': 'Commonly confused with "too" (also/excessively) or "two" (2). Double-check usage.',
-    'too': 'Commonly confused with "to". Double-check usage.',
-  };
-
+ 
+  // ============================================================
+  // IMPROVED GRAMMAR ENGINE
+  // ============================================================
+ 
+  const CONFUSABLE_WORDS = [
+    {
+      pattern: /\btheir\s+(is|are|was|were)\b/gi,
+      severity: 'high',
+      title: 'Possible "there"/"their" error',
+      description: '"Their" shows possession, while "there" is normally used to introduce or locate something.',
+      suggestion: 'Check whether you mean "there".'
+    },
+    {
+      pattern: /\bthey're\s+(book|car|house|phone|computer|idea|name|mother|father|friend|parents)\b/gi,
+      severity: 'high',
+      title: 'Possible "they\'re"/"their" error',
+      description: '"They\'re" means "they are". "Their" shows possession.',
+      suggestion: 'Use "their" when showing possession.'
+    },
+    {
+      pattern: /\byour\s+(is|are|was|were)\b/gi,
+      severity: 'high',
+      title: 'Possible "your"/"you\'re" error',
+      description: '"Your" shows possession. "You\'re" means "you are".',
+      suggestion: 'If you mean "you are", use "you\'re".'
+    },
+    {
+      pattern: /\byou're\s+(book|car|house|phone|computer|idea|name|mother|father|friend|parents)\b/gi,
+      severity: 'high',
+      title: 'Possible "you\'re"/"your" error',
+      description: '"You\'re" means "you are", while "your" shows possession.',
+      suggestion: 'Use "your" when showing possession.'
+    },
+    {
+      pattern: /\bits\s+(is|was|has|will)\b/gi,
+      severity: 'medium',
+      title: 'Possible "its"/"it\'s" error',
+      description: '"It\'s" means "it is" or "it has".',
+      suggestion: 'Consider using "it\'s".'
+    },
+    {
+      pattern: /\bit's\s+(color|name|size|shape|owner|tail|head|value)\b/gi,
+      severity: 'medium',
+      title: 'Possible "it\'s"/"its" error',
+      description: '"Its" is the possessive form.',
+      suggestion: 'Use "its" when showing possession.'
+    },
+    {
+      pattern: /\b(more|less|greater|better|worse)\s+then\b/gi,
+      severity: 'high',
+      title: '"Than" required for comparison',
+      description: '"Than" is normally used when comparing things.',
+      suggestion: 'Replace "then" with "than".'
+    },
+    {
+      pattern: /\b(could|would|should|might|must)\s+of\b/gi,
+      severity: 'high',
+      title: 'Incorrect modal construction',
+      description: 'The expression should use "have", not "of".',
+      suggestion: 'Use "could have", "would have", "should have", etc.'
+    }
+  ];
+ 
+  // ============================================================
+  // ACTUAL GRAMMAR RULES
+  // ============================================================
+ 
+  const GRAMMAR_RULES = [
+ 
+    // Subject / verb agreement
+    {
+      pattern: /\b(he|she|it)\s+(are|were|have|do)\b/gi,
+      severity: 'high',
+      title: 'Subject-verb agreement',
+      description: 'A singular subject does not normally take this plural verb form.',
+      suggestion: 'Check the verb so that it agrees with the subject.'
+    },
+    {
+      pattern: /\b(they|we)\s+(is|was|has|does)\b/gi,
+      severity: 'high',
+      title: 'Subject-verb agreement',
+      description: 'A plural subject normally requires the appropriate plural verb form.',
+      suggestion: 'Check the verb so that it agrees with the subject.'
+    },
+    {
+      pattern: /\b(he|she|it)\s+(go|eat|play|work|want|need|like|run|walk|write|read|make|take|give|use|have)\b/gi,
+      severity: 'high',
+      title: 'Subject-verb agreement',
+      description: 'A singular third-person subject normally needs the appropriate singular verb form.',
+      suggestion: 'For example: "He goes", "She likes", or "It works".'
+    },
+ 
+    // Did + incorrect verb
+    {
+      pattern: /\b(didn't|did not|did)\s+\b\w+(ed|went|gone|ate|saw|came|took|made|gave)\b/gi,
+      severity: 'high',
+      title: 'Incorrect verb after "did"',
+      description: 'After "did" or "did not", the verb normally uses its base form.',
+      suggestion: 'For example: "did not go", not "did not went".'
+    },
+ 
+    // Modal + incorrect verb
+    {
+      pattern: /\b(can|could|will|would|should|must|may|might)\s+\w+(ed|ing)\b/gi,
+      severity: 'medium',
+      title: 'Possible modal verb error',
+      description: 'Modal verbs are normally followed by the base form of the verb.',
+      suggestion: 'For example: "can go", "should work", or "might happen".'
+    },
+ 
+    // Articles
+    {
+      pattern: /\ba\s+(apple|orange|egg|elephant|engine|idea|artist|animal|hour|honest|umbrella)\b/gi,
+      severity: 'medium',
+      title: 'Incorrect article',
+      description: 'This word normally begins with a vowel sound.',
+      suggestion: 'Use "an" instead of "a".'
+    },
+    {
+      pattern: /\ban\s+(car|dog|book|house|computer|phone|student|university|user|European)\b/gi,
+      severity: 'medium',
+      title: 'Incorrect article',
+      description: 'This word normally begins with a consonant sound.',
+      suggestion: 'Use "a" instead of "an".'
+    },
+ 
+    // Countable / uncountable nouns
+    {
+      pattern: /\bmuch\s+(people|students|cars|books|houses|ideas|questions|problems)\b/gi,
+      severity: 'medium',
+      title: 'Countable noun with "much"',
+      description: '"Much" is normally used with uncountable nouns.',
+      suggestion: 'Use "many" with countable plural nouns.'
+    },
+    {
+      pattern: /\bmany\s+(information|advice|furniture|equipment|money|water)\b/gi,
+      severity: 'medium',
+      title: 'Uncountable noun with "many"',
+      description: 'This noun is normally treated as uncountable.',
+      suggestion: 'Consider "much" or another suitable expression.'
+    },
+ 
+    // Double comparatives
+    {
+      pattern: /\b(more better|more worse|most best|most worst)\b/gi,
+      severity: 'high',
+      title: 'Incorrect comparative/superlative',
+      description: 'Two comparative or superlative forms have been combined.',
+      suggestion: 'Use the correct single comparative or superlative form.'
+    },
+ 
+    // Common incorrect constructions
+    {
+      pattern: /\bbetween\s+you\s+and\s+i\b/gi,
+      severity: 'medium',
+      title: 'Pronoun case',
+      description: 'After "between", the objective pronoun "me" is normally used.',
+      suggestion: 'Use "between you and me".'
+    },
+    {
+      pattern: /\bme\s+and\s+(he|she|they|we)\b/gi,
+      severity: 'medium',
+      title: 'Pronoun order',
+      description: 'This pronoun construction is grammatically awkward in standard English.',
+      suggestion: 'Use the appropriate subject pronouns and normally place yourself last.'
+    },
+ 
+    // Missing infinitive "to"
+    {
+      pattern: /\b(want|wants|wanted|need|needs|needed|plan|plans|planned|hope|hopes|hoped)\s+(go|eat|play|work|study|learn|buy|make|see|visit)\b/gi,
+      severity: 'medium',
+      title: 'Possible missing "to"',
+      description: 'These verbs are commonly followed by "to" before another verb.',
+      suggestion: 'For example: "want to go", "need to study", or "plan to visit".'
+    },
+ 
+    // Common tense errors
+    {
+      pattern: /\b(yesterday|last\s+night|last\s+week|last\s+year)\s+[^.!?]*\b(go|eat|see|come|take|make|give|write|buy)\b/gi,
+      severity: 'low',
+      title: 'Possible tense error',
+      description: 'A past-time expression may require a past-tense verb.',
+      suggestion: 'Check whether the verb should be in the past tense.'
+    },
+ 
+    // Repeated subject
+    {
+      pattern: /\b(he|she|they|we|i)\s+\1\b/gi,
+      severity: 'medium',
+      title: 'Repeated word',
+      description: 'The same subject appears twice consecutively.',
+      suggestion: 'Remove the unnecessary repeated word.'
+    }
+  ];
+ 
+  // ============================================================
+  // GRAMMAR ANALYSIS FUNCTION
+  // ============================================================
+ 
+  function analyzeGrammar(text) {
+ 
+    const issues = [];
+    const highlights = [];
+ 
+    if (!text || !text.trim()) {
+      return { issues, highlights };
+    }
+ 
+    // ----------------------------------------------------------
+    // Run actual grammar rules
+    // ----------------------------------------------------------
+ 
+    for (const rule of GRAMMAR_RULES) {
+ 
+      const regex = new RegExp(
+        rule.pattern.source,
+        rule.pattern.flags
+      );
+ 
+      let match;
+ 
+      while ((match = regex.exec(text)) !== null) {
+ 
+        issues.push({
+          severity: rule.severity,
+          title: rule.title,
+          description: rule.description,
+          snippet: match[0],
+          suggestion: rule.suggestion,
+          start: match.index,
+          end: match.index + match[0].length
+        });
+ 
+        highlights.push({
+          start: match.index,
+          end: match.index + match[0].length,
+          severity: rule.severity
+        });
+ 
+        // Prevent infinite loops with zero-length regexes
+        if (match[0].length === 0) {
+          regex.lastIndex++;
+        }
+      }
+    }
+ 
+    // ----------------------------------------------------------
+    // Run contextual confusing-word rules
+    // ----------------------------------------------------------
+ 
+    for (const rule of CONFUSABLE_WORDS) {
+ 
+      const regex = new RegExp(
+        rule.pattern.source,
+        rule.pattern.flags
+      );
+ 
+      let match;
+ 
+      while ((match = regex.exec(text)) !== null) {
+ 
+        issues.push({
+          severity: rule.severity,
+          title: rule.title,
+          description: rule.description,
+          snippet: match[0],
+          suggestion: rule.suggestion,
+          start: match.index,
+          end: match.index + match[0].length
+        });
+ 
+        highlights.push({
+          start: match.index,
+          end: match.index + match[0].length,
+          severity: rule.severity
+        });
+ 
+        if (match[0].length === 0) {
+          regex.lastIndex++;
+        }
+      }
+    }
+ 
+    return {
+      issues,
+      highlights
+    };
+  }
+ 
   // Curated list of frequently misspelled English words → correct spelling.
   // Matched case-insensitively; the suggested fix mirrors the original word's capitalization.
   const COMMON_MISSPELLINGS = {
@@ -1834,22 +2215,30 @@
     'visable':'visible', 'volentered':'volunteered', 'wether':'whether', 'whenver':'whenever', 'withdrawl':'withdrawal',
     'writen':'written',
   };
-
+ 
   function matchWordCase(original, replacement){
     if (original === original.toUpperCase()) return replacement.toUpperCase();
     if (original[0] === original[0].toUpperCase()) return replacement[0].toUpperCase() + replacement.slice(1);
     return replacement;
   }
-
+ 
   function splitSentences(text){
     const matches = text.match(/[^.!?]+[.!?]*/g) || [];
     return matches.map(m => m.trim()).filter(Boolean);
   }
-
+ 
   function analyzeText(text){
     const issues = [];
     const highlights = [];
     let m;
+ 
+    // ============================================================
+    // IMPROVED GRAMMAR ANALYSIS
+    // ============================================================
+    const grammarResult = analyzeGrammar(text);
+    issues.push(...grammarResult.issues);
+    highlights.push(...grammarResult.highlights);
+ 
     const dbl = /[ ]{2,}/g;
     while ((m = dbl.exec(text)) !== null){
       issues.push({ severity:'low', title:'Double space', description:'Extra whitespace between words.', snippet: text.slice(Math.max(0,m.index-15), m.index+15).trim() });
@@ -1869,14 +2258,6 @@
     while ((m = excess.exec(text)) !== null){
       issues.push({ severity:'low', title:'Excessive punctuation', description:'Multiple exclamation/question marks read as informal.', snippet: m[0] });
       highlights.push({ start:m.index, end:m.index+m[0].length, severity:'low' });
-    }
-    const wordRe = /\b[a-zA-Z']+\b/g;
-    while ((m = wordRe.exec(text)) !== null){
-      const w = m[0].toLowerCase();
-      if (CONFUSABLE_WORDS[w]){
-        issues.push({ severity:'low', title:`Check word choice: "${m[0]}"`, description: CONFUSABLE_WORDS[w], snippet: text.slice(Math.max(0,m.index-20), m.index+20).trim() });
-        highlights.push({ start:m.index, end:m.index+m[0].length, severity:'low' });
-      }
     }
     const spellRe = /\b[a-zA-Z]+\b/g;
     while ((m = spellRe.exec(text)) !== null){
@@ -1918,7 +2299,7 @@
     }
     return { issues, highlights, wordCount: (text.match(/\b\w+\b/g) || []).length, sentenceCount: sentences.length };
   }
-
+ 
   function buildHighlightedHtml(text, highlights){
     if (highlights.length === 0) return escapeHtml(text);
     highlights.sort((a,b) => a.start - b.start);
@@ -1937,16 +2318,16 @@
     html += escapeHtml(text.slice(pos));
     return html;
   }
-
+ 
   function renderGrammarEmpty(){
     grammarResultsPanel.innerHTML = `<div class="empty-state"><span class="icon">✎</span><p>Run a check to see feedback here.</p></div>`;
     grammarPreviewPanel.style.display = 'none';
     grammarCountLabel.textContent = '';
   }
-
+ 
   function severityWeight(sev){ return sev === 'high' ? 6 : sev === 'medium' ? 3 : 1; }
   let lastGrammarReport = '';
-
+ 
   function renderGrammarResults(text, analysis){
     const { issues, highlights, wordCount, sentenceCount } = analysis;
     if (issues.length === 0){
@@ -1964,7 +2345,7 @@
     const low = issues.filter(i=>i.severity==='low').length;
     grammarCountLabel.textContent = `${issues.length} issue${issues.length===1?'':'s'}`;
     const spellingIssueCount = issues.filter(i => i.spellingFix).length;
-
+ 
     let reportText = `Grammar report — score ${score}/100 (${wordCount} words, ${sentenceCount} sentences)\n\n`;
     let html = `
       <div class="grammar-score-wrap">
@@ -1985,6 +2366,12 @@
         <div class="issue-head"><div class="issue-title">${escapeHtml(issue.title)}</div><div class="badge-sev ${issue.severity}">${issue.severity}</div></div>
         <div class="issue-desc">${escapeHtml(issue.description)}</div>
         ${issue.snippet ? `<div class="issue-code"><span class="code">${escapeHtml(issue.snippet)}</span></div>` : ''}
+        ${issue.suggestion ? `
+          <div class="issue-suggestion">
+            <strong>Suggestion:</strong>
+            ${escapeHtml(issue.suggestion)}
+          </div>
+        ` : ''}
         ${issue.spellingFix ? `<div class="result-actions" style="margin-top:0.6rem;"><button class="btn icon-btn spelling-fix-btn" data-start="${issue.spellingFix.start}" data-end="${issue.spellingFix.end}" data-suggestion="${escapeHtml(issue.spellingFix.suggestion)}">✓ Fix to "${escapeHtml(issue.spellingFix.suggestion)}"</button></div>` : ''}
       </div>`;
       reportText += `[${issue.severity.toUpperCase()}] ${issue.title}\n  ${issue.description}\n\n`;
@@ -1993,7 +2380,7 @@
     grammarResultsPanel.innerHTML = html;
     lastGrammarReport = reportText;
     document.getElementById('copyGrammarBtn').addEventListener('click', () => copyToClipboard(lastGrammarReport, 'Grammar report'));
-
+ 
     grammarResultsPanel.querySelectorAll('.spelling-fix-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const start = parseInt(btn.dataset.start, 10);
@@ -2015,11 +2402,11 @@
         checkGrammar();
       });
     }
-
+ 
     highlightedText.innerHTML = buildHighlightedHtml(text, highlights);
     grammarPreviewPanel.style.display = '';
   }
-
+ 
   function applySpellingFix(start, end, suggestion){
     const value = textInput.value;
     textInput.value = value.slice(0, start) + suggestion + value.slice(end);
@@ -2027,7 +2414,7 @@
     showToast(`Fixed to "${suggestion}"`, '✓');
     checkGrammar();
   }
-
+ 
   function checkGrammar(){
     const text = textInput.value;
     if (!text.trim()){ renderGrammarEmpty(); return; }
@@ -2044,10 +2431,10 @@
       showToast(analysis.issues.length === 0 ? pick(CLEAN_PHRASES_TEXT) : `${pick(FOUND_PHRASES)} — ${analysis.issues.length} issue${analysis.issues.length===1?'':'s'}`, analysis.issues.length === 0 ? '🎉' : '✎');
     }, 450);
   }
-
+ 
   checkBtn.addEventListener('click', checkGrammar);
   document.getElementById('textClearBtn').addEventListener('click', () => { textInput.value=''; updateTextCounter(); renderGrammarEmpty(); });
-
+ 
   // init counters
   updateCodeCounter();
   updateTextCounter();
@@ -2055,3 +2442,4 @@
 </script>
 </body>
 </html>
+ 
