@@ -6,7 +6,7 @@
 <title>Code Crusader — Logic, Decoded.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/hashimrasheed275/Code-debugger/main/assets/code-crusader-mascot.png">
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/hashimrasheed275/Code-debugger/main/code-crusader-mascot.png">
 <style>
   :root{
     --bg: #f7f8fa;
@@ -909,7 +909,7 @@
   <div class="main-area">
     <div class="topbar">
       <div class="breadcrumb" id="breadcrumb">
-        <img src="https://raw.githubusercontent.com/hashimrasheed275/Code-debugger/main/assets/code-crusader-mascot.png" alt="" class="breadcrumb-mascot">
+        <img src="https://raw.githubusercontent.com/hashimrasheed275/Code-debugger/main/code-crusader-mascot.png" alt="" class="breadcrumb-mascot">
         <strong>CODE CRUSADER</strong>
         <span>/</span>
         <b>Home</b>
@@ -935,7 +935,7 @@
             <button class="hero-btn ghost" data-nav="math">Σ&nbsp; Solve Maths</button>
             <button class="hero-btn ghost" data-nav="grammar">Aa&nbsp; Check Writing</button>
           </div>
-          <img src="https://raw.githubusercontent.com/hashimrasheed275/Code-debugger/main/assets/code-crusader-mascot.png" alt="Code Crusader — your logic-solving companion" class="hero-mascot">
+          <img src="https://raw.githubusercontent.com/hashimrasheed275/Code-debugger/main/code-crusader-mascot.png" alt="Code Crusader — your logic-solving companion" class="hero-mascot">
         </div>
 
         <div class="stats-row">
@@ -1287,7 +1287,7 @@
   function goTo(page){
     Object.entries(views).forEach(([key, el]) => el.classList.toggle('active', key === page));
     navItems.forEach(b => b.classList.toggle('active', b.dataset.nav === page));
-    breadcrumb.innerHTML = `<img src="https://raw.githubusercontent.com/hashimrasheed275/Code-debugger/main/assets/code-crusader-mascot.png" alt="" class="breadcrumb-mascot"><strong>CODE CRUSADER</strong><span>/</span><b>${pageLabels[page]}</b>`;
+    breadcrumb.innerHTML = `<img src="https://raw.githubusercontent.com/hashimrasheed275/Code-debugger/main/code-crusader-mascot.png" alt="" class="breadcrumb-mascot"><strong>CODE CRUSADER</strong><span>/</span><b>${pageLabels[page]}</b>`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
  
