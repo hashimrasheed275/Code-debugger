@@ -880,9 +880,9 @@
       <button class="nav-item active" data-nav="home"><span class="icon">🏠</span><span>Home</span></button>
  
       <div class="sidebar-section-label">Tools</div>
-      <button class="nav-item" data-nav="bugs"><span class="icon">🐞</span><span>Bug Scanner</span><span class="badge-count" id="navCountBugs" style="display:none;">0</span></button>
-      <button class="nav-item" data-nav="math"><span class="icon">Σ</span><span>Math Solver</span></button>
-      <button class="nav-item" data-nav="grammar"><span class="icon">✎</span><span>Grammar Checker</span><span class="badge-count" id="navCountGrammar" style="display:none;">0</span></button>
+      <button class="nav-item" data-nav="bugs"><span class="icon">🐞</span><span>debug chamber</span><span class="badge-count" id="navCountBugs" style="display:none;">0</span></button>
+      <button class="nav-item" data-nav="math"><span class="icon">Σ</span><span>logic solver</span></button>
+      <button class="nav-item" data-nav="grammar"><span class="icon">✎</span><span>grammar guard</span><span class="badge-count" id="navCountGrammar" style="display:none;">0</span></button>
     </nav>
  
     <div class="sidebar-footer">
@@ -996,7 +996,7 @@
         </div>
       </div>
  
-      <!-- ============ PAGE: BUG SCANNER ============ -->
+      <!-- ============ PAGE: debug chamber ============ -->
       <div class="view" id="view-bugs">
         <div class="page-head">
           <div>
@@ -1054,7 +1054,7 @@
         </section>
       </div>
  
-      <!-- ============ PAGE: MATH SOLVER ============ -->
+      <!-- ============ PAGE: logic solver ============ -->
       <div class="view" id="view-math">
         <div class="page-head">
           <div>
@@ -1099,7 +1099,7 @@
         </div>
       </div>
  
-      <!-- ============ PAGE: GRAMMAR CHECKER ============ -->
+      <!-- ============ PAGE: grammar guard ============ -->
       <div class="view" id="view-grammar">
         <div class="page-head">
           <div>
@@ -1374,7 +1374,7 @@
   });
  
   // =================================================================
-  // PAGE: BUG SCANNER
+  // PAGE: debug chamber
   // =================================================================
   const BUG_PATTERNS = {
     javascript: [
@@ -1621,7 +1621,7 @@
         <div class="summary-chip medium"><span class="num">${med}</span><span class="lbl">Medium</span></div>
         <div class="summary-chip low"><span class="num">${low}</span><span class="lbl">Low</span></div>
       </div><div class="issue-list">`;
-    let reportText = `Bug Scanner report (${bugs.length} issue${bugs.length===1?'':'s'})\n\n`;
+    let reportText = `debug chamber report (${bugs.length} issue${bugs.length===1?'':'s'})\n\n`;
     for (const bug of bugs){
       html += `<div class="issue ${bug.severity}">
           <div class="issue-head"><div class="issue-title">${escapeHtml(bug.title)}</div><div class="badge-sev ${bug.severity}">${bug.severity}</div></div>
@@ -1682,7 +1682,7 @@
   setLanguage('python');
  
   // =================================================================
-  // PAGE: MATH SOLVER
+  // PAGE: logic solver
   // =================================================================
   const mathInput = document.getElementById('mathInput');
   const mathResultsPanel = document.getElementById('mathResultsPanel');
@@ -1874,7 +1874,7 @@
   });
  
   // =================================================================
-  // PAGE: GRAMMAR CHECKER
+  // PAGE: grammar guard
   // =================================================================
   const textInput = document.getElementById('textInput');
   const grammarResultsPanel = document.getElementById('grammarResultsPanel');
