@@ -758,7 +758,7 @@
   @keyframes toastOut{ to{ opacity:0; transform: translateY(-6px); } }
  
   @media (prefers-reduced-motion: reduce){ *{ transition: none !important; animation: none !important; } }
-
+ 
   /* =========================================================
      CODE CRUSADER BRAND THEME
      ========================================================= */
@@ -768,16 +768,14 @@
     --cc-border:rgba(56,189,248,.18); --cc-text:#f4f7fb; --cc-muted:#9aa9bd;
     --primary:var(--cc-blue); --primary-dark:#0967c9; --primary-light:var(--cc-purple);
     --primary-bg:rgba(34,211,238,.10);
-    --bg:#060b14; --surface:#0c1422; --text:var(--cc-text);
-    --text-muted:var(--cc-muted); --border:var(--cc-border);
-    --shadow-sm:0 4px 18px rgba(0,0,0,.20); --shadow-md:0 10px 35px rgba(0,0,0,.28);
-    --shadow-lg:0 20px 60px rgba(0,0,0,.40);
   }
   html[data-theme="dark"]{
     --bg:#060b14; --surface:#0c1422; --border:var(--cc-border);
     --text:var(--cc-text); --text-muted:var(--cc-muted); --text-faint:#718198;
+    --shadow-sm:0 4px 18px rgba(0,0,0,.20); --shadow-md:0 10px 35px rgba(0,0,0,.28);
+    --shadow-lg:0 20px 60px rgba(0,0,0,.40);
   }
-  body{
+  html[data-theme="dark"] body{
     background:radial-gradient(circle at 80% 5%,rgba(139,92,246,.12),transparent 30%),
       radial-gradient(circle at 10% 90%,rgba(34,211,238,.08),transparent 30%),#060b14;
     color:var(--cc-text);
@@ -798,11 +796,12 @@
     background:linear-gradient(90deg,var(--cc-cyan),var(--cc-purple));
     -webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap;
   }
-  .topbar{background:rgba(6,11,20,.88);border-bottom:1px solid rgba(34,211,238,.12);backdrop-filter:blur(16px);}
+  html[data-theme="dark"] .topbar{background:rgba(6,11,20,.88);border-bottom:1px solid rgba(34,211,238,.12);backdrop-filter:blur(16px);}
   .breadcrumb{display:flex;align-items:center;gap:.55rem;}
   .breadcrumb-mascot{width:30px;height:30px;object-fit:contain;border-radius:50%;filter:drop-shadow(0 0 7px rgba(34,211,238,.35));flex-shrink:0;}
-  .breadcrumb strong{color:#fff;font-family:var(--font-display);letter-spacing:.03em;}
-  .hero{
+  .breadcrumb strong{color:var(--text);}
+  html[data-theme="dark"] .breadcrumb strong{color:#fff;}
+  html[data-theme="dark"] .hero{
     background:radial-gradient(circle at 82% 25%,rgba(139,92,246,.28),transparent 34%),
       radial-gradient(circle at 65% 80%,rgba(34,211,238,.18),transparent 30%),
       linear-gradient(135deg,#081524 0%,#0b1830 50%,#11112c 100%);
@@ -810,7 +809,7 @@
     box-shadow:0 20px 70px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.04);
     overflow:hidden;
   }
-  .hero::after{
+  html[data-theme="dark"] .hero::after{
     content:"";position:absolute;inset:0;
     background-image:linear-gradient(rgba(34,211,238,.035) 1px,transparent 1px),
       linear-gradient(90deg,rgba(34,211,238,.035) 1px,transparent 1px);
@@ -829,12 +828,15 @@
     z-index:2;transition:transform .35s ease;
   }
   .hero:hover .hero-mascot{transform:translateY(-7px) scale(1.025);}
-  .hero-btn:not(.ghost){
+  html[data-theme="dark"] .hero-btn:not(.ghost){
     background:linear-gradient(135deg,var(--cc-blue),var(--cc-purple));color:#fff;
     box-shadow:0 8px 24px rgba(22,140,255,.25);
   }
-  .hero-btn:not(.ghost):hover{box-shadow:0 12px 30px rgba(34,211,238,.30);}
-  .panel,.stat-card,.steps-panel,.feature-card{
+  html[data-theme="dark"] .hero-btn:not(.ghost):hover{box-shadow:0 12px 30px rgba(34,211,238,.30);}
+  html[data-theme="dark"] .panel,
+  html[data-theme="dark"] .stat-card,
+  html[data-theme="dark"] .steps-panel,
+  html[data-theme="dark"] .feature-card{
     background:linear-gradient(145deg,rgba(17,29,49,.96),rgba(10,20,34,.96));
     border-color:rgba(34,211,238,.12);box-shadow:0 8px 30px rgba(0,0,0,.20);
   }
@@ -845,9 +847,12 @@
   .feature-icon{box-shadow:0 0 20px rgba(34,211,238,.08);}
   .editor-wrap{border-color:rgba(34,211,238,.16);box-shadow:0 10px 35px rgba(0,0,0,.28);}
   .editor-topbar{background:#08111e;} textarea.editor-input{background:#050b14;}
-  a,.section-label,.page-head h1{color:var(--cc-cyan);}
+  .section-label,.page-head h1{color:var(--primary);}
+  html[data-theme="dark"] a,
+  html[data-theme="dark"] .section-label,
+  html[data-theme="dark"] .page-head h1{color:var(--cc-cyan);}
   ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--cc-blue),var(--cc-purple));}
-  ::-webkit-scrollbar-track{background:#050b14;}
+  html[data-theme="dark"] ::-webkit-scrollbar-track{background:#050b14;}
   @media (max-width:900px){
     .hero-mascot{width:150px;height:150px;right:.5rem;bottom:-.5rem;opacity:.85;}
     .hero{padding-right:7rem;}
@@ -858,7 +863,7 @@
     .hero-mascot{position:relative;width:120px;height:120px;right:auto;bottom:auto;margin:1rem auto 0;display:block;}
     .hero{padding-right:1.5rem;text-align:center;}
   }
-
+ 
 </style>
 </head>
 <body>
@@ -937,7 +942,7 @@
           </div>
           <img src="https://raw.githubusercontent.com/hashimrasheed275/Code-debugger/main/code-crusader-mascot.png" alt="Code Crusader — your logic-solving companion" class="hero-mascot">
         </div>
-
+ 
         <div class="stats-row">
           <div class="stat-card"><span class="stat-icon">🐞</span><div><span class="stat-num" id="statBugs">0</span><div class="stat-lbl">Code scans run</div></div></div>
           <div class="stat-card"><span class="stat-icon">Σ</span><div><span class="stat-num" id="statMath">0</span><div class="stat-lbl">Problems solved</div></div></div>
@@ -1225,7 +1230,9 @@
   // THEME TOGGLE
   // =================================================================
   const themeSwitch = document.getElementById('themeSwitch');
-  let darkMode = false;
+  let darkMode = true;
+  document.documentElement.setAttribute('data-theme', 'dark');
+  themeSwitch.classList.add('on');
   themeSwitch.addEventListener('click', () => {
     darkMode = !darkMode;
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
@@ -2442,4 +2449,3 @@
 </script>
 </body>
 </html>
- 
