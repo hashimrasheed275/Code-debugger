@@ -880,9 +880,9 @@
       <button class="nav-item active" data-nav="home"><span class="icon">🏠</span><span>Home</span></button>
  
       <div class="sidebar-section-label">Tools</div>
-      <button class="nav-item" data-nav="bugs"><span class="icon">🐞</span><span>debug chamber</span><span class="badge-count" id="navCountBugs" style="display:none;">0</span></button>
-      <button class="nav-item" data-nav="math"><span class="icon">Σ</span><span>logic solver</span></button>
-      <button class="nav-item" data-nav="grammar"><span class="icon">✎</span><span>grammar guard</span><span class="badge-count" id="navCountGrammar" style="display:none;">0</span></button>
+      <button class="nav-item" data-nav="bugs"><span class="icon">🐞</span><span>Debug chamber</span><span class="badge-count" id="navCountBugs" style="display:none;">0</span></button>
+      <button class="nav-item" data-nav="math"><span class="icon">Σ</span><span>Logic solver</span></button>
+      <button class="nav-item" data-nav="grammar"><span class="icon">✎</span><span>Grammar guard</span><span class="badge-count" id="navCountGrammar" style="display:none;">0</span></button>
     </nav>
  
     <div class="sidebar-footer">
@@ -952,30 +952,30 @@
           <button class="feature-card" data-nav="bugs" draggable="true">
             <span class="drag-handle">✥</span>
             <div class="feature-icon bugs">🐞</div>
-            <h3>Debug Chamber</h3>
+            <h3>Debug chamber</h3>
             <p>Find the flaw. Understand the logic. Scan Python, JavaScript, Java, C++, or HTML for common mistakes with suggested fixes.</p>
-            <div class="go">Open Debug Chamber →</div>
+            <div class="go">Open Debug chamber →</div>
           </button>
           <button class="feature-card" data-nav="math" draggable="true">
             <span class="drag-handle">✥</span>
             <div class="feature-icon math">Σ</div>
-            <h3>Logic Solver</h3>
+            <h3>Logic solver</h3>
             <p>Work through the problem, step by step. Evaluate expressions and solve linear or quadratic equations with the working shown.</p>
-            <div class="go">Open Logic Solver →</div>
+            <div class="go">Open Logic solver →</div>
           </button>
           <button class="feature-card" data-nav="grammar" draggable="true">
             <span class="drag-handle">✥</span>
             <div class="feature-icon grammar">✎</div>
-            <h3>Grammar Guard</h3>
+            <h3>Grammar guard</h3>
             <p>Catch mistakes. Strengthen your writing. Spot punctuation, spelling, wording, run-on sentence, and passive-voice issues.</p>
-            <div class="go">Open Grammar Guard →</div>
+            <div class="go">Open Grammar guard →</div>
           </button>
         </div>
  
         <div class="steps-panel">
           <div class="section-label" style="margin-bottom:0;">How it works</div>
           <div class="steps-row">
-            <div class="step-block"><div class="num">1</div><div><h4>Pick a tool</h4><p>Choose Debug Chamber, Logic Solver, or Grammar Guard from the sidebar.</p></div></div>
+            <div class="step-block"><div class="num">1</div><div><h4>Pick a tool</h4><p>Choose Debug chamber, Logic solver, or Grammar guard from the sidebar.</p></div></div>
             <div class="step-block"><div class="num">2</div><div><h4>Paste your content</h4><p>Drop in code, an equation, or a paragraph — or try one of the built-in examples.</p></div></div>
             <div class="step-block"><div class="num">3</div><div><h4>Get instant feedback</h4><p>See issues, fixes, and steps immediately — everything runs on-device.</p></div></div>
           </div>
@@ -996,11 +996,11 @@
         </div>
       </div>
  
-      <!-- ============ PAGE: debug chamber ============ -->
+      <!-- ============ PAGE: Debug chamber ============ -->
       <div class="view" id="view-bugs">
         <div class="page-head">
           <div>
-            <h1>⚔️ Debug Chamber</h1>
+            <h1>⚔️ Debug chamber</h1>
             <p>Paste your code, run a scan, and get a personalized set of things to study based on what came up.</p>
           </div>
           <button class="back-link" data-nav="home">← Back to home</button>
@@ -1054,11 +1054,11 @@
         </section>
       </div>
  
-      <!-- ============ PAGE: logic solver ============ -->
+      <!-- ============ PAGE: Logic solver ============ -->
       <div class="view" id="view-math">
         <div class="page-head">
           <div>
-            <h1>Σ Logic Solver</h1>
+            <h1>Σ Logic solver</h1>
             <p>Type an expression to calculate, or an equation with "=" to solve for x — see the steps behind the answer.</p>
           </div>
           <button class="back-link" data-nav="home">← Back to home</button>
@@ -1099,11 +1099,11 @@
         </div>
       </div>
  
-      <!-- ============ PAGE: grammar guard ============ -->
+      <!-- ============ PAGE: Grammar guard ============ -->
       <div class="view" id="view-grammar">
         <div class="page-head">
           <div>
-            <h1>✎ Grammar Guard</h1>
+            <h1>✎ Grammar guard</h1>
             <p>Paste text to catch punctuation slips, spelling mistakes, mixed-up words, run-ons, and other common writing issues — with one-click fixes for spelling.</p>
           </div>
           <button class="back-link" data-nav="home">← Back to home</button>
@@ -1282,7 +1282,7 @@
   const views = { home: document.getElementById('view-home'), bugs: document.getElementById('view-bugs'), math: document.getElementById('view-math'), grammar: document.getElementById('view-grammar') };
   const navItems = document.querySelectorAll('.nav-item');
   const breadcrumb = document.getElementById('breadcrumb');
-  const pageLabels = { home: 'Home', bugs: 'Debug Chamber', math: 'Logic Solver', grammar: 'Grammar Guard' };
+  const pageLabels = { home: 'Home', bugs: 'Debug chamber', math: 'Logic solver', grammar: 'Grammar guard' };
  
   function goTo(page){
     Object.entries(views).forEach(([key, el]) => el.classList.toggle('active', key === page));
@@ -1374,7 +1374,7 @@
   });
  
   // =================================================================
-  // PAGE: debug chamber
+  // PAGE: Debug chamber
   // =================================================================
   const BUG_PATTERNS = {
     javascript: [
@@ -1621,7 +1621,7 @@
         <div class="summary-chip medium"><span class="num">${med}</span><span class="lbl">Medium</span></div>
         <div class="summary-chip low"><span class="num">${low}</span><span class="lbl">Low</span></div>
       </div><div class="issue-list">`;
-    let reportText = `debug chamber report (${bugs.length} issue${bugs.length===1?'':'s'})\n\n`;
+    let reportText = `Debug chamber report (${bugs.length} issue${bugs.length===1?'':'s'})\n\n`;
     for (const bug of bugs){
       html += `<div class="issue ${bug.severity}">
           <div class="issue-head"><div class="issue-title">${escapeHtml(bug.title)}</div><div class="badge-sev ${bug.severity}">${bug.severity}</div></div>
@@ -1682,7 +1682,7 @@
   setLanguage('python');
  
   // =================================================================
-  // PAGE: logic solver
+  // PAGE: Logic solver
   // =================================================================
   const mathInput = document.getElementById('mathInput');
   const mathResultsPanel = document.getElementById('mathResultsPanel');
@@ -1874,7 +1874,7 @@
   });
  
   // =================================================================
-  // PAGE: grammar guard
+  // PAGE: Grammar guard
   // =================================================================
   const textInput = document.getElementById('textInput');
   const grammarResultsPanel = document.getElementById('grammarResultsPanel');
